@@ -1,26 +1,67 @@
-﻿internal class Program
+﻿using System.ComponentModel.Design;
+
+internal class Program
 {
+
     private static void Main(string[] args)
     {
-        int n1, n2;
+        double num1, num2;
+        int opcao = 0;
 
-        Console.WriteLine("Informe o primeiro número:");
-        n1 = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("Informe o segundo número:");
-        n2 = int.Parse(Console.ReadLine());
-
-        //Soma
-
-        Console.WriteLine("A soma é: " + (n1+n2));
-        Console.WriteLine("A subtração é: " + (n1-n2));
-        Console.WriteLine("O produto é: " + (n1 * n2));
-        if(n2 == 0)
+        void Menu()
         {
-            Console.WriteLine("Não existe divisão por zero.");
-         }
-        else
-            Console.WriteLine("O quociente é:" + (n1 / n2));
+            Console.Clear();
+            Console.WriteLine("1 - Somar");
+            Console.WriteLine("2 - Subtrair");
+            Console.WriteLine("3 - Multiplicar");
+            Console.WriteLine("4 - Dividir");
+            Console.WriteLine("5 - Sair");
+            Console.WriteLine("Escolha uma opção");
+            opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao)
+            {
+                default:
+                    Console.WriteLine("Opção inválida");
+                    Console.WriteLine("Escolha uma opção");
+                    break;
+
+                  case 1: Console.WriteLine("A soma dos numeros é: " + (num1 + num2));
+                    Console.ReadLine();
+                    break;
+
+                  case 2: Console.WriteLine("A subtração dos numeros é: " + (num1 - num2));
+                    Console.ReadLine();
+                    break;
+
+                case 3:
+                    Console.WriteLine("A multiplicação dos numeros é: " + (num1 * num2));
+                    Console.ReadLine();
+                    break;
+
+                case 4:
+                    Console.WriteLine("A divisão dos numeros é: " + (num1/num2));
+                    Console.ReadLine();
+                    break;
+
+                case 5: Console.WriteLine("Até logo!");
+                    Console.ReadLine();
+                    break;
+
+
+            }
+        }
+
+        Console.WriteLine("Informe o primeiro numero");
+        num1 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Informe o segundo numero");
+        num2 = double.Parse(Console.ReadLine());
+
+        while(opcao != 5)
+        {
+            Menu();
+        }
 
     }
 }
