@@ -18,6 +18,7 @@ internal class Program
             Console.WriteLine("5 - Sair");
             Console.WriteLine("Escolha uma opção");
             opcao = int.Parse(Console.ReadLine());
+            
 
             switch (opcao)
             {
